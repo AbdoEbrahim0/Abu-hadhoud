@@ -1,0 +1,70 @@
+class clsA
+{
+private:
+    //only accessible inside this class, neither derived classes nor outside class.
+    
+        int _Var1;
+    void _Fun1()
+    {
+        cout << "Function 1";
+    }
+protected:
+    //only accessible inside this class and all derived classes, but not outside class
+    
+        int Var2;
+    void Fun2()
+    {
+        cout << "Function 1";
+    }
+public:
+    // Accessible inside this class, all derived classes, and outside class
+    
+        int Var3;
+    void Fun3()
+    {
+        cout << "Function 1";
+    }
+};
+
+class clsB : public clsA
+{
+public:
+
+    void Func1()
+    {
+        clsA::Var2 = 50;
+       cout << clsA::Var2;
+       cout << "FUN1 FROM cslsB";
+    }
+};
+
+class clsC
+{
+public:
+    void Func1()
+    {
+
+        clsA classA;
+        classA.Var3 = 400;  //not this clsA::Var3=100;  it need an obect of outside class to accessed
+        classA.Fun3();
+    }
+};
+int main()
+{
+    //clsA classA;
+    //classA.    //[ public only from classA : var3 & Fun3]
+    //clsB classB;
+    //classB.      //[public only from classA  var3 & Fun3  + public only from sub/class Func1]
+                // to modify/acess members that are protected in superclass you should deal with them inside sub/class EX:clsA:: Var2 = 50 via function inside sub/class;
+    clsB classB;
+    classB.Var3 = 330;
+    classB.Func1();
+    //clsPerson Person1(10,"abdo" ,"magdy" ,"abdo@gmail.com","0112640877");
+    ////Person1.print();
+    //clsEmployee E1(20, "AZIZ", "GAMAL", "AzizAhotmail.com", "010010101010","SWE","IT" ,5000);
+    //E1.print();
+    //
+    //clsDeveloper dev1(30, "badr", "Ashraf", "badr@hotmail.com", "01101101110", "SWE", "Android", 10000, "C++");
+    //dev1.print();
+    return 0;
+}
