@@ -1,0 +1,50 @@
+class clsA
+{
+private:
+    //only accessible inside this class, neither derived classes nor outside class.
+    
+        int _Var1;
+    void _Fun1()
+    {
+        cout << "Function 1";
+    }
+protected:
+    //only accessible inside this class and all derived classes, but not outside class
+    
+        int Var2;
+    void Fun2()
+    {
+        cout << "Function 1";
+    }
+public:
+    // Accessible inside this class, all derived classes, and outside class
+    
+        int Var3;
+    void Fun3()
+    {
+        cout << "Function 1";
+    }
+};
+
+class clsB : public clsA
+{
+public:
+    void Func1()
+    {
+
+        clsA:: Var2 = 50;
+       cout << clsA::Var2;
+    }
+};
+
+class clsB
+{
+public:
+    void Func1()
+    {
+
+        clsA classA;
+        classA.Var3 = 400;  //not this clsA::Var3=100;  it need an obect of outside class to accessed
+        classA.Fun3();
+    }
+};
