@@ -1,0 +1,158 @@
+class clsPerson
+{
+    string _fName,_lName;
+    int _ID = 10;
+    string _phoneNum, _email;
+public:
+    
+    string getFName()
+    {
+        return _fName;
+    }
+    string getLName()
+    {
+        return _lName;
+    }
+    string getEmail()
+    {
+        return _email;
+    }
+    string getPhone()
+    {
+        return _phoneNum;
+    }
+    void setFName(string x)
+    {
+        _fName=x;
+    }
+    void setLName(string x)
+    {
+        _lName = x;
+    }
+
+    void setEmail(string x)
+    {
+        _email = x;
+    }
+    void setPhone(string x)
+    {
+        _phoneNum = x;
+    }
+    clsPerson()
+    {
+    }
+    clsPerson( int ID ,string fname,string lname,string emailV,string phone)
+    {
+        _ID = ID;
+        _fName= fname;
+        _lName = lname;
+        _email = emailV;
+        _phoneNum = phone;
+    }
+    int ID()
+    {
+        return _ID;
+    }    
+    void print()
+    {
+        cout <<_ID << "\n";
+        cout << _fName << "\n";
+        cout << _lName << "\n";
+        cout << _fName + _lName << "\n";
+        cout << _phoneNum << "\n";
+        cout << _email<< "\n";
+    }
+
+    void sendEmail(string subject, string msg)
+    {
+        cout << "------------------------------\n";
+        cout << "the following mesage sented to " << getEmail()<<"\n";
+        cout << subject << endl;
+        cout << msg << endl;
+    }
+    void sendSms(string msg)
+    {
+        cout << "------------------------------\n";
+        cout << "the following mesage sented to " << getPhone()<< "\n";
+        cout << msg << endl;
+    }
+};
+//string clsPerson::email = "";
+//string clsPerson::phoneNum = "";
+
+class clsEmployee : public clsPerson
+{
+private:
+    string _Title;
+    string _Department;
+    float _Salary;
+public:
+    //Property Set
+    
+    void setTitle(string Title)
+    {
+        _ID = 20;
+        _Title = Title;
+    }
+    //Property Get
+    string Title()
+    {
+        return _Title;
+    }
+    //Property Set
+    void setDepartment(string Department)
+    {
+        _Department = Department;
+    }
+    //Property Get
+    string Department()
+    {
+        return _Department;
+    }
+    //Property Set
+    void setSalary(float Salary)
+    {
+        _Salary = Salary;
+    }
+    //Property Get
+    float Salary()
+    {
+        return _Salary;
+    }
+};
+int main()
+{
+    clsPerson Person1(10,"abdo" ,"magdy" ,"abdo@gmail.com","0112640877");
+    
+    //Person1.print();
+    clsEmployee E1;
+    E1.setFName("AZIZ");
+    E1.setLName("GAMAL");
+    E1.setPhone("010010101010");
+    E1.setEmail("AzizAhotmail.com");
+
+    //E1.print();
+    
+    E1.setDepartment("IT");
+    E1.setTitle("SoftWareEngineer");
+    E1.setSalary(5.5);
+    
+    E1.print();
+    cout << E1.Department() << "\n";
+    cout << E1.Title() << "\n";
+    cout<<E1.Salary()<<"\n";
+
+    //
+    //Person1.print();
+
+    //Person1.sendEmail("greeting", "How Are you");
+    //Person1.sendSms("welcome from sms");
+    //
+    //////////////
+    //Person1.setEmail("hazem@gmail.com");
+    //Person1.setPhone("011000000000");
+    //cout << "**************After edit email and phone************* \n";
+    //Person1.sendEmail("greeting", "How Are you");
+    //Person1.sendSms("welcome from sms");
+    return 0;
+}
