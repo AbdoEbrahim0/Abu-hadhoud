@@ -1,0 +1,392 @@
+#define M_PI 3.14159265358979323846
+#include <cstdio>
+#include <stdio.h>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <regex>
+#include <numeric>
+#include <stdlib.h>
+#include <numeric>
+#include<sstream>
+#include <cstdint>
+#include <array>
+#include <utility>
+#include <list>
+#include<unordered_set>
+#include <bitset>
+#include <string>
+#include <cmath>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <queue>
+#include<stack>
+#include <math.h>
+//#include <bits/stdc++.h>
+using namespace std;
+
+// 
+//class clsPerson
+//{
+//    string _fName,_lName;
+//    
+//    string _phoneNum, _email;
+//public:
+//    int _ID = 10;
+//    string getFName()
+//    {
+//        return _fName;
+//    }
+//    string getLName()
+//    {
+//        return _lName;
+//    }
+//    string getEmail()
+//    {
+//        return _email;
+//    }
+//    string getPhone()
+//    {
+//        return _phoneNum;
+//    }
+//    void setFName(string x)
+//    {
+//        _fName=x;
+//    }
+//    void setLName(string x)
+//    {
+//        _lName = x;
+//    }
+//
+//    void setEmail(string x)
+//    {
+//        _email = x;
+//    }
+//    void setPhone(string x)
+//    {
+//        _phoneNum = x;
+//    }
+//    clsPerson()
+//    {
+//    }
+//    clsPerson( int ID ,string fname,string lname,string emailV,string phone)
+//    {
+//        _ID = ID;
+//        _fName= fname;
+//        _lName = lname;
+//        _email = emailV;
+//        _phoneNum = phone;
+//    }
+//    int ID()
+//    {
+//        return _ID;
+//    }    
+//    void print()
+//    {
+//        cout <<_ID << "\n";
+//        cout << _fName << "\n";
+//        cout << _lName << "\n";
+//        cout << _fName + _lName << "\n";
+//        cout << _phoneNum << "\n";
+//        cout << _email<< "\n";
+//    }
+//
+//    void sendEmail(string subject, string msg)
+//    {
+//        cout << "------------------------------\n";
+//        cout << "the following mesage sented to " << getEmail()<<"\n";
+//        cout << subject << endl;
+//        cout << msg << endl;
+//    }
+//    void sendSms(string msg)
+//    {
+//        cout << "------------------------------\n";
+//        cout << "the following mesage sented to " << getPhone()<< "\n";
+//        cout << msg << endl;
+//    }
+//};
+////string clsPerson::email = "";
+////string clsPerson::phoneNum = "";
+//
+//class clsEmployee : public clsPerson
+//{
+//private:
+//    string _Title;
+//    string _Department;
+//    float _Salary;
+//public:
+//    //Property Set
+//    clsEmployee(int idd, string fname, string lname, string emailV, string phone, string title,string dep,float sal)
+//        :clsPerson(idd, fname, lname, emailV, phone)
+//    {
+//        _Title= title;
+//        _Department=dep;
+//        _Salary=sal;
+//    }
+//    void setTitle(string Title)
+//    {
+//        _ID = 20;
+//        _Title = Title;
+//    }
+//    //Property Get
+//    string Title()
+//    {
+//        return _Title;
+//    }
+//    //Property Set
+//    void setDepartment(string Department)
+//    {
+//        _Department = Department;
+//    }
+//    //Property Get
+//    string Department()
+//    {
+//        return _Department;
+//    }
+//    //Property Set
+//    void setSalary(float Salary)
+//    {
+//        _Salary = Salary;
+//    }
+//    //Property Get
+//    float Salary()
+//    {
+//        return _Salary;
+//    }
+//
+//    void print()
+//    {
+//        clsPerson::print();
+//        cout << _Title << " \n";
+//        cout << _Department << " \n";
+//        cout << _Salary << " \n";
+//    }
+//    /*void print()
+//    {
+//        cout << ID() << " \n";
+//        cout << getFName()<< " \n";
+//        cout << getLName()<< " \n";
+//        cout << getEmail() << " \n";
+//        cout << getPhone()<< " \n";
+//        
+//        cout << _Title << " \n";
+//        cout << _Department << " \n";
+//        cout << _Salary << " \n";
+//    }*/
+//};
+//
+//class clsDeveloper : public clsEmployee
+//{
+//private :
+//    
+//    string _MainProgrammingLanguage;
+//public:
+//
+//    clsDeveloper(int idd, string fname, string lname, string emailV, string phone, string title, string dep, float sal, string MainProgrammingLanguage)
+//        :clsEmployee(idd, fname, lname, emailV, phone, title, dep, sal)
+//    {
+//        _MainProgrammingLanguage = MainProgrammingLanguage;
+//    }
+//    void print()
+//    {
+//        clsEmployee::print();
+//        cout << _MainProgrammingLanguage << "\n";
+//    }
+//    
+//};
+//
+//class clsA
+//{
+//private:
+//    //only accessible inside this class, neither derived classes nor outside class.
+//    
+//        int _Var1;
+//    void _Fun1()
+//    {
+//        cout << "Function 1";
+//    }
+//protected:
+//    //only accessible inside this class and all derived classes, but not outside class
+//    
+//        int Var2;
+//    void Fun2()
+//    {
+//        cout << "Function 1";
+//    }
+//public:
+//    // Accessible inside this class, all derived classes, and outside class
+//    
+//        int Var3;
+//    void Fun3()
+//    {
+//        cout << "Function 1";
+//    }
+//};
+//
+//class clsB : private clsA
+//{
+//public:
+//
+//    void Func1()
+//    {
+//        
+//        clsA::Var2 = 50;
+//       cout << clsA::Var2;
+//       cout << "FUN1 FROM cslsB";
+//    }
+//};
+//
+//class clsC : public clsB
+//{
+//public:
+//    void Func1()
+//    {
+//
+//        clsA classA;
+//        classA.Var3 = 400;  //not this clsA::Var3=100;  it need an obect of outside class to accessed
+//        //run well after change visability to private -you will face a problem only when inhirit from classB as all its member became private
+//        //if visability becaem protected or public will face no problem 
+//        classA.Fun3();
+//    }
+//};
+
+//naive TLE O(n^2)
+//class Solution {
+//public:
+//    long long countFairPairs(vector<int>& nums, int lower, int upper) {
+//        int n = nums.size();
+//        long long sum;
+//        int counter = 0;
+//        for (int i = 0; i < n; i++)
+//        {
+//            for (int j = i + 1; j < n; j++)
+//            {
+//                    sum = nums[i] + nums[j];
+//                    if (sum <= upper && sum >= lower)
+//                        counter++;
+//            }
+//        }
+//        return counter;
+//    }
+//
+//};
+
+//class Solution {
+//public:
+//    long long solve(vector<int>& nums, int sum)
+//    {
+//        int i = 0, j = nums.size() - 1;
+//        long long cnt = 0;
+//        while (i<j)
+//        {
+//            if (nums[i] + nums[j] <= sum)
+//            {
+//                cnt += (j - i);
+//                i++;
+//            }
+//            else
+//                j--;
+//        }
+//        return cnt;
+//    }
+//
+//    long long countFairPairs(vector<int>& nums, int lower, int upper) {
+//        
+//        sort(nums.begin(), nums.end());
+//        
+//        return solve(nums, upper) - solve(nums, lower - 1);
+//    }
+//
+//};
+
+class clsPerson
+{
+public:
+    virtual void Print()
+    {
+        cout << "Hi, i'm a person!\n ";
+    }
+};
+class clsEmployee : public clsPerson
+{
+public:
+    void Print()
+    {
+        cout << "Hi, I'm an Employee\n";
+    }
+};
+class clsStudent : public clsPerson
+{
+public:
+    void Print()
+    {
+        cout << "Hi, I'm a student\n";
+    }
+};
+int main()
+{
+    clsEmployee Employee1;
+    clsStudent Student1;
+    Employee1.Print();
+    Student1.Print();
+    //try to remove virtual from super class the output of next will indicate to fn of super class not subclass
+    clsPerson* Person1 = &Employee1;
+    clsPerson* Person2 = &Student1;
+    Person1->Print();
+    Person2->Print();
+
+    //Solution obj;
+    //vector<int>v = { 0,0,0,0,0,0 };
+    //obj.countFairPairs(v, 0, 0);
+    //vector<int>v = { 0, 1, 7, 4, 4, 5 };
+    //obj.countFairPairs(v, 3, 6);
+    
+    //clsPerson Person1(10,"abdo" ,"magdy" ,"abdo@gmail.com","0112640877");
+    ////Person1.print();
+    //clsEmployee E1(20, "AZIZ", "GAMAL", "AzizAhotmail.com", "010010101010","SWE","IT" ,5000);
+    //E1.print();
+    //
+    //clsDeveloper dev1(30, "badr", "Ashraf", "badr@hotmail.com", "01101101110", "SWE", "Android", 10000, "C++");
+    //dev1.print();
+    return 0;
+}
+
+
+
+
+// methode 1 O(N)
+//bool any_odd(unsigned x) {
+//    int idx = 0;
+//    while (x != 0)
+//    {
+//        if (idx % 2 != 0) //any oddd bit if 1 return true 
+//        {
+//            if (x % 2 == 1)
+//                return true;
+//        }
+//        idx++;;
+//        x = x / 2;
+//    }
+//    return false;
+//}
+        // methode 2 O(1)
+//int any_odd(unsigned x) {
+//    auto d = 0xAAAAAAAA;
+//    return ((x & 0xAAAAAAAA) ==x) ? 1 : 0;
+//}
+        // methode 3 O(N)
+//int any_odd(unsigned x) {
+//    std::string str = std::bitset<std::numeric_limits<unsigned>::digits>(x).to_string();
+//
+//    for (int i = str.size() - 1; i >= 0; i--)
+//    {
+//        if ((str.size() - 1 - i) % 2 == 1 && str[i] == '1')
+//            return 1;
+//    }
+//    return 0;
+//}
